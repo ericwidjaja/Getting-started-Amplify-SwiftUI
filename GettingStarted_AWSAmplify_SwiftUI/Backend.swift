@@ -13,8 +13,7 @@ class Backend {
     static func initialize() -> Backend {
         return .shared
     }
-    private init() {
-        // initialize amplify
+    private init() { // initialize amplify
         do {
             try Amplify.add(plugin: AWSCognitoAuthPlugin()) // added from Module 3
             try Amplify.configure()
@@ -22,6 +21,43 @@ class Backend {
         } catch {
             print("Could not initialize Amplify: \(error)")
         }
+        
+        // listen to auth events.
+        // see https://github.com/aws-amplify/amplify-ios/blob/master/Amplify/Categories/Auth/Models/AuthEventName.swift
+        _ = Amplify.Hub.listen(to: .auth) { (payload) in
+
+            switch payload.eventName {
+
+            case HubPayload.EventName.Auth.signedIn:
+                print("==HUB== User signed In, update UI")
+                self.updateUserData(withSignInStatus: true)
+
+            case HubPayload.EventName.Auth.signedOut:
+                print("==HUB== User signed Out, update UI")
+                self.updateUserData(withSignInStatus: false)
+
+            case HubPayload.EventName.Auth.sessionExpired:
+                print("==HUB== Session expired, show sign in UI")
+                self.updateUserData(withSignInStatus: false)
+
+            default:
+                //print("==HUB== \(payload)")
+                break
+            }
+        }
+         
+        // let's check if user is signedIn or not
+         _ = Amplify.Auth.fetchAuthSession { (result) in
+             do {
+                 let session = try result.get()
+                        
+        // let's update UserData and the UI
+             self.updateUserData(withSignInStatus: session.isSignedIn)
+                        
+             } catch {
+                  print("Fetch auth session failed with error - \(error)")
+            }
+        }    
     }
     /*  We initialize our singleton Backend object when application finishes launching.
         
