@@ -6,6 +6,7 @@
 //
 import UIKit
 import Amplify
+import AmplifyPlugins
 
 class Backend {
     static let shared = Backend()
@@ -13,13 +14,14 @@ class Backend {
         return .shared
     }
     private init() {
-      // initialize amplify
-      do {
-        try Amplify.configure()
-        print("Initialized Amplify");
-      } catch {
-        print("Could not initialize Amplify: \(error)")
-      }
+        // initialize amplify
+        do {
+            try Amplify.add(plugin: AWSCognitoAuthPlugin()) // added from Module 3
+            try Amplify.configure()
+            print("Initialized Amplify");
+        } catch {
+            print("Could not initialize Amplify: \(error)")
+        }
     }
 }
 
