@@ -23,8 +23,44 @@ class Backend {
             print("Could not initialize Amplify: \(error)")
         }
     }
-}
+    /*  We initialize our singleton Backend object when application finishes launching.
+        
+        Open the AppDelegate.swift file and add Backend.initialize(); in the application(:didFinishLaunchingWithOptions:) method
+    */
+    
+    // MARK: - User Authentication
 
-//We initialize our singleton Backend object when application finishes launching.
-//
-//Open the AppDelegate.swift file and add Backend.initialize(); in the application(:didFinishLaunchingWithOptions:) method
+    // signin with Cognito web user interface
+    public func signIn() {
+
+        _ = Amplify.Auth.signInWithWebUI(presentationAnchor: UIApplication.shared.windows.first!) { result in
+            switch result {
+            case .success(_):
+                print("Sign in succeeded")
+            case .failure(let error):
+                print("Sign in failed \(error)")
+            }
+        }
+    }
+
+    // signout
+    public func signOut() {
+
+        _ = Amplify.Auth.signOut() { (result) in
+            switch result {
+            case .success:
+                print("Successfully signed out")
+            case .failure(let error):
+                print("Sign out failed with error \(error)")
+            }
+        }
+    }
+
+    // change our internal state, this triggers an UI update on the main thread
+    func updateUserData(withSignInStatus status : Bool) {
+        DispatchQueue.main.async() {
+            let userData : UserData = .shared
+            userData.isSignedIn = status
+        }
+    }
+}
