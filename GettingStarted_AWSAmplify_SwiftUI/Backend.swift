@@ -22,3 +22,7 @@ class Backend {
       }
     }
 }
+
+//We initialize our singleton Backend object when application finishes launching.
+//
+//Open the AppDelegate.swift file and add Backend.initialize(); in the application(:didFinishLaunchingWithOptions:) method

@@ -10,10 +10,25 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+/*    Open the AppDelegate.swift file and add Backend.initialize(); in the application(:didFinishLaunchingWithOptions:) method, just like this:
 
+     // inside the AppDelegate.swift file
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        // initialize Amplify
+        let _ = Backend.initialize()
+
+        return true
+    }
+    
+    */
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // initialize Amplify
+        let _ = Backend.initialize()
+        
         return true
     }
 
