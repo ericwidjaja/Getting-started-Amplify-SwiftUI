@@ -33,7 +33,19 @@ class Note : Identifiable, ObservableObject {
     // from Module 4 - to add this initializer in the Note class
     convenience init(from data: NoteData) {
         self.init(id: data.id, name: data.name, description: data.description, image: data.image)
-        
+/* from Module 5 - to load the images when the API call returns
+    When an image name is present in the instance of Note, the code calls retrieveImage. This is an asynchronous function. It takes a function to call when the image is downloaded. The function creates an Image UI object and assign it to the instance of Note. Notice that this assignment triggers a User Interface update, hence it happens on the main thread of the application with DispatchQueue.main.async.
+ */
+        if let name = self.imageName {
+            // asynchronously download the image
+            Backend.shared.retrieveImage(name: name) { (data) in
+                // update the UI on the main thread
+                DispatchQueue.main.async() {
+                    let uim = UIImage(data: data)
+                    self.image = Image(uiImage: uim!)
+                }
+            }
+        }
         // store API object for easy retrieval later
         self._data = data
     }
@@ -52,7 +64,6 @@ class Note : Identifiable, ObservableObject {
         
         return _data!
     }
-    
 }
 
 // a view to represent a single list item
@@ -110,10 +121,10 @@ struct ContentView: View {
             if (userData.isSignedIn) {
                 NavigationView {
                     List {
-//                        ForEach(userData.notes) { note in
-//                            ListRow(note: note)
-//                        }
-// from Module 4 - add the 'swipe to delete' behavior: add the .onDelete { } method to the ForEach struct by replacing the above line with:
+                        //                        ForEach(userData.notes) { note in
+                        //                            ListRow(note: note)
+                        //                        }
+                        // from Module 4 - add the 'swipe to delete' behavior: add the .onDelete { } method to the ForEach struct by replacing the above line with:
                         
                         ForEach(userData.notes) { note in
                             ListRow(note: note)
@@ -121,15 +132,15 @@ struct ContentView: View {
                             indices.forEach {
                                 // removing from user data will refresh UI
                                 let note = self.userData.notes.remove(at: $0)
-
+                                
                                 // asynchronously remove from database
                                 Backend.shared.deleteNote(note: note)
                             }
                         }
                     }
                     .navigationBarTitle(Text("Notes"))
-//                    .navigationBarItems(leading: SignOutButton())
-//  from Module 4.c Add a + button on the navigation bar to present a sheet to create a Note - by replacing the above line with the following:
+                    //                    .navigationBarItems(leading: SignOutButton())
+                    //  from Module 4.c Add a + button on the navigation bar to present a sheet to create a Note - by replacing the above line with the following:
                     .navigationBarItems(leading: SignOutButton(),
                                         trailing: Button(action: {
                                             self.showCreateNote.toggle()
