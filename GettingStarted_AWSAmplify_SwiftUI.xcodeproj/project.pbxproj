@@ -16,6 +16,7 @@
 		DF0C3511266C52E800D09278 /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C350E266C52E800D09278 /* NoteData.swift */; };
 		DF0C3512266C52E800D09278 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C350F266C52E800D09278 /* AmplifyModels.swift */; };
 		DF0C3513266C52E800D09278 /* NoteData+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3510266C52E800D09278 /* NoteData+Schema.swift */; };
+		DF0C3523266D2EBE00D09278 /* CaptureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3522266D2EBE00D09278 /* CaptureImageView.swift */; };
 		DF38F23E266AFECF001A3CE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38F23D266AFECF001A3CE3 /* AppDelegate.swift */; };
 		DF38F240266AFECF001A3CE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38F23F266AFECF001A3CE3 /* SceneDelegate.swift */; };
 		DF38F242266AFECF001A3CE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38F241266AFECF001A3CE3 /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 		DF0C350E266C52E800D09278 /* NoteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteData.swift; sourceTree = "<group>"; };
 		DF0C350F266C52E800D09278 /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
 		DF0C3510266C52E800D09278 /* NoteData+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NoteData+Schema.swift"; sourceTree = "<group>"; };
+		DF0C3522266D2EBE00D09278 /* CaptureImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureImageView.swift; sourceTree = "<group>"; };
 		DF38F23A266AFECF001A3CE3 /* GettingStarted_AWSAmplify_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettingStarted_AWSAmplify_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF38F23D266AFECF001A3CE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF38F23F266AFECF001A3CE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				DF38F23D266AFECF001A3CE3 /* AppDelegate.swift */,
 				DF38F23F266AFECF001A3CE3 /* SceneDelegate.swift */,
 				DF38F241266AFECF001A3CE3 /* ContentView.swift */,
+				DF0C3522266D2EBE00D09278 /* CaptureImageView.swift */,
 				DF38F25B266B1CA3001A3CE3 /* Backend.swift */,
 				DF38F243266AFED2001A3CE3 /* Assets.xcassets */,
 				DF38F248266AFED2001A3CE3 /* LaunchScreen.storyboard */,
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF38F25C266B1CA3001A3CE3 /* Backend.swift in Sources */,
+				DF0C3523266D2EBE00D09278 /* CaptureImageView.swift in Sources */,
 				DF0C3511266C52E800D09278 /* NoteData.swift in Sources */,
 				DF0C3513266C52E800D09278 /* NoteData+Schema.swift in Sources */,
 				DF38F23E266AFECF001A3CE3 /* AppDelegate.swift in Sources */,
