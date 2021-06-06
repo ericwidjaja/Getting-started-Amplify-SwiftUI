@@ -85,6 +85,13 @@ struct ListRow: View {
 // this is the main view of our app,
 // it is made of a Table with one line per Note
 struct ContentView: View {
+    // from Module 4 - add at the begining of ContentView class
+    @State var showCreateNote = false
+    
+    @State var name : String        = "New Note"
+    @State var description : String = "This is a new note"
+    @State var image : String       = "image"
+    
     @ObservedObject private var userData: UserData = .shared
     
     //    var body: some View {
@@ -103,14 +110,38 @@ struct ContentView: View {
             if (userData.isSignedIn) {
                 NavigationView {
                     List {
+//                        ForEach(userData.notes) { note in
+//                            ListRow(note: note)
+//                        }
+// from Module 4 - add the 'swipe to delete' behavior: add the .onDelete { } method to the ForEach struct by replacing the above line with:
+                        
                         ForEach(userData.notes) { note in
                             ListRow(note: note)
+                        }.onDelete { indices in
+                            indices.forEach {
+                                // removing from user data will refresh UI
+                                let note = self.userData.notes.remove(at: $0)
+
+                                // asynchronously remove from database
+                                Backend.shared.deleteNote(note: note)
+                            }
                         }
                     }
                     .navigationBarTitle(Text("Notes"))
-                    .navigationBarItems(leading: SignOutButton())
+//                    .navigationBarItems(leading: SignOutButton())
+//  from Module 4.c Add a + button on the navigation bar to present a sheet to create a Note - by replacing the above line with the following:
+                    .navigationBarItems(leading: SignOutButton(),
+                                        trailing: Button(action: {
+                                            self.showCreateNote.toggle()
+                                        }) {
+                                            Image(systemName: "plus")
+                                        })
+                }.sheet(isPresented: $showCreateNote) {
+                    AddNoteView(isPresented: self.$showCreateNote, userData: self.userData)
                 }
+                
             } else {
+                
                 SignInButton()
             }
         }
@@ -153,6 +184,48 @@ struct ContentView_Previews: PreviewProvider {
         let _ = prepareTestData()
         
         return ContentView()
+    }
+}
+
+// from Module 4 - add a View struct to let user create a new Note:
+
+struct AddNoteView: View {
+    @Binding var isPresented: Bool
+    var userData: UserData
+    
+    @State var name : String        = "New Note"
+    @State var description : String = "This is a new note"
+    @State var image : String       = "image"
+    var body: some View {
+        Form {
+            
+            Section(header: Text("TEXT")) {
+                TextField("Name", text: $name)
+                TextField("Name", text: $description)
+            }
+            
+            Section(header: Text("PICTURE")) {
+                TextField("Name", text: $image)
+            }
+            
+            Section {
+                Button(action: {
+                    self.isPresented = false
+                    let noteData = NoteData(id : UUID().uuidString,
+                                            name: self.$name.wrappedValue,
+                                            description: self.$description.wrappedValue)
+                    let note = Note(from: noteData)
+                    
+                    // asynchronously store the note (and assume it will succeed)
+                    Backend.shared.createNote(note: note)
+                    
+                    // add the new note in our userdata, this will refresh UI
+                    self.userData.notes.append(note)
+                }) {
+                    Text("Create this note")
+                }
+            }
+        }
     }
 }
 
