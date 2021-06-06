@@ -17,6 +17,7 @@ class Backend {
         do {
             try Amplify.add(plugin: AWSCognitoAuthPlugin()) // added from Module 3
             try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))// added from Module 4
+            try Amplify.add(plugin: AWSS3StoragePlugin()) // added from Module 5, after installing S3 in Podfile
             try Amplify.configure()
             
             print("Initialized Amplify");
