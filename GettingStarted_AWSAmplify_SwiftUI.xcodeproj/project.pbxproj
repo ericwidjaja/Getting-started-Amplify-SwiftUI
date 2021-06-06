@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2668629686B5FE26A1C84A01 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6485A951591B6BF815E7203 /* AmplifyModels.swift */; };
+		32C37141C65CA405F3691157 /* NoteData+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320A01E58E4CE895EFBBFBE4 /* NoteData+Schema.swift */; };
 		7AD264D3A944C8C4A724B8DA /* Pods_GettingStarted_AWSAmplify_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1705ABD18BAB51DAFC6E1330 /* Pods_GettingStarted_AWSAmplify_SwiftUI.framework */; };
+		A8DA7E73B2153AE2CF4D9014 /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D0C8194BE792E0924BF6DA /* NoteData.swift */; };
 		B23A1465DA3A7667CAD6F658 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A532DDAC0CD8A972DE7C203A /* amplifyconfiguration.json */; };
 		D521DBAF8F85D23BFCF2C958 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A33A89816AB61037C7811A34 /* awsconfiguration.json */; };
+		DF0C3511266C52E800D09278 /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C350E266C52E800D09278 /* NoteData.swift */; };
+		DF0C3512266C52E800D09278 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C350F266C52E800D09278 /* AmplifyModels.swift */; };
+		DF0C3513266C52E800D09278 /* NoteData+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3510266C52E800D09278 /* NoteData+Schema.swift */; };
 		DF38F23E266AFECF001A3CE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38F23D266AFECF001A3CE3 /* AppDelegate.swift */; };
 		DF38F240266AFECF001A3CE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38F23F266AFECF001A3CE3 /* SceneDelegate.swift */; };
 		DF38F242266AFECF001A3CE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38F241266AFECF001A3CE3 /* ContentView.swift */; };
@@ -23,10 +29,16 @@
 
 /* Begin PBXFileReference section */
 		1705ABD18BAB51DAFC6E1330 /* Pods_GettingStarted_AWSAmplify_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GettingStarted_AWSAmplify_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		320A01E58E4CE895EFBBFBE4 /* NoteData+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "NoteData+Schema.swift"; path = "amplify/generated/models/NoteData+Schema.swift"; sourceTree = "<group>"; };
 		4007229C737210AF1313F91E /* Pods-GettingStarted_AWSAmplify_SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettingStarted_AWSAmplify_SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-GettingStarted_AWSAmplify_SwiftUI/Pods-GettingStarted_AWSAmplify_SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		A2D0C8194BE792E0924BF6DA /* NoteData.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = NoteData.swift; path = amplify/generated/models/NoteData.swift; sourceTree = "<group>"; };
 		A33A89816AB61037C7811A34 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		A532DDAC0CD8A972DE7C203A /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		AD8BB536F5094BC1568BA660 /* Pods-GettingStarted_AWSAmplify_SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettingStarted_AWSAmplify_SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-GettingStarted_AWSAmplify_SwiftUI/Pods-GettingStarted_AWSAmplify_SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		D6485A951591B6BF815E7203 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
+		DF0C350E266C52E800D09278 /* NoteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteData.swift; sourceTree = "<group>"; };
+		DF0C350F266C52E800D09278 /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
+		DF0C3510266C52E800D09278 /* NoteData+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NoteData+Schema.swift"; sourceTree = "<group>"; };
 		DF38F23A266AFECF001A3CE3 /* GettingStarted_AWSAmplify_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettingStarted_AWSAmplify_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF38F23D266AFECF001A3CE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF38F23F266AFECF001A3CE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,12 +82,41 @@
 			name = AmplifyConfig;
 			sourceTree = "<group>";
 		};
+		40C4E6D1D917CC6E68922D1E /* AmplifyModels */ = {
+			isa = PBXGroup;
+			children = (
+				D6485A951591B6BF815E7203 /* AmplifyModels.swift */,
+				320A01E58E4CE895EFBBFBE4 /* NoteData+Schema.swift */,
+				A2D0C8194BE792E0924BF6DA /* NoteData.swift */,
+			);
+			name = AmplifyModels;
+			sourceTree = "<group>";
+		};
 		789AA47886B7C760B8F04F89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1705ABD18BAB51DAFC6E1330 /* Pods_GettingStarted_AWSAmplify_SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF0C350C266C52E800D09278 /* generated */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C350D266C52E800D09278 /* models */,
+			);
+			name = generated;
+			path = amplify/generated;
+			sourceTree = SOURCE_ROOT;
+		};
+		DF0C350D266C52E800D09278 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C350E266C52E800D09278 /* NoteData.swift */,
+				DF0C350F266C52E800D09278 /* AmplifyModels.swift */,
+				DF0C3510266C52E800D09278 /* NoteData+Schema.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		DF38F231266AFECF001A3CE3 = {
@@ -88,6 +129,7 @@
 				3B379A90B168C07C06671E7D /* AmplifyConfig */,
 				1128C5F9718D526C4D953964 /* Pods */,
 				789AA47886B7C760B8F04F89 /* Frameworks */,
+				40C4E6D1D917CC6E68922D1E /* AmplifyModels */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +144,7 @@
 		DF38F23C266AFECF001A3CE3 /* GettingStarted_AWSAmplify_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				DF0C350C266C52E800D09278 /* generated */,
 				DF38F23D266AFECF001A3CE3 /* AppDelegate.swift */,
 				DF38F23F266AFECF001A3CE3 /* SceneDelegate.swift */,
 				DF38F241266AFECF001A3CE3 /* ContentView.swift */,
@@ -224,9 +267,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GettingStarted_AWSAmplify_SwiftUI/Pods-GettingStarted_AWSAmplify_SwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GettingStarted_AWSAmplify_SwiftUI/Pods-GettingStarted_AWSAmplify_SwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -241,9 +288,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF38F25C266B1CA3001A3CE3 /* Backend.swift in Sources */,
+				DF0C3511266C52E800D09278 /* NoteData.swift in Sources */,
+				DF0C3513266C52E800D09278 /* NoteData+Schema.swift in Sources */,
 				DF38F23E266AFECF001A3CE3 /* AppDelegate.swift in Sources */,
 				DF38F240266AFECF001A3CE3 /* SceneDelegate.swift in Sources */,
+				DF0C3512266C52E800D09278 /* AmplifyModels.swift in Sources */,
 				DF38F242266AFECF001A3CE3 /* ContentView.swift in Sources */,
+				2668629686B5FE26A1C84A01 /* AmplifyModels.swift in Sources */,
+				32C37141C65CA405F3691157 /* NoteData+Schema.swift in Sources */,
+				A8DA7E73B2153AE2CF4D9014 /* NoteData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
